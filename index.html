@@ -108,7 +108,21 @@
                     return false;
                 }
            }
-          
+             function repassinput()
+             {
+                var password = document.getElementById("password").value;
+                var repass = document.getElementById("repass").value;
+
+
+                if(password==repass)
+                {
+                    document.getElementById("repassworderror").innerHTML = " ";
+                }
+                else{
+                    document.getElementById("repassworderror").innerHTML = "* doesnot match";
+                    return false;
+                }
+             }
 
 
             function myfunction()
@@ -226,7 +240,7 @@
             <input oninput ="return passinput()"id = "password" name = "password"type="password" placeholder="Please enter your password..."><br>
    
             <label>Re-enter password</label><span style = "color:red;"id = repassworderror></span><br>
-            <input id = "repass" name = "repass"type="password" placeholder="Please Re-enter your password..."><br>
+            <input oninput ="return repassinput()"id = "repass" name = "repass"type="password" placeholder="Please Re-enter your password..."><br>
             <label>Select your QUALIFICATION</label><br>
             <select  name="degree" id="degree">
             <option value="none">NONE</option>
